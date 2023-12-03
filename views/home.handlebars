@@ -1,1 +1,21 @@
+{{> layouts/main}}
+
+{{#section 'body'}}
+  <h2>Welcome to the Tech Blog!</h2>
+
+  {{#if isAuthenticated}}
+    <p>Check out the latest blog posts or create your own!</p>
+  {{else}}
+    <p>Explore the latest tech blog posts. <a href="/login">Login</a> or <a href="/signup">Sign Up</a> to start writing!</p>
+  {{/if}}
+
+  {{#if posts.length}}
+    <h3>Latest Blog Posts</h3>
+    {{#each posts}}
+      {{> partials/post}}
+    {{/each}}
+  {{else}}
+    <p>No blog posts available. Be the first to contribute!</p>
+  {{/if}}
+{{/section}}
 
