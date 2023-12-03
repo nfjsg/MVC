@@ -1,1 +1,12 @@
+<div class="post">
+  <h2 class="post-title">{{title}}</h2>
+  <p class="post-meta">Posted by {{username}} on {{formatDate createdAt}}</p>
+  <div class="post-content">
+    {{content}}
+  </div>
+  <!-- Include comments partial to render comments associated with this post -->
+  {{#if comments}}
+    {{> partials/comment}}
+  {{/if}}
+</div>
 
